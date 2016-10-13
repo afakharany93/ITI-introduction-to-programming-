@@ -1,0 +1,10 @@
+#include<stdio.h>
+
+void main (void)
+{
+	char hexa;
+	printf("Please input the char you wish to know its hexadecimal code \n");
+	scanf("%c", &hexa;
+	printf("The hexadecimal code is: %d \npress any key to exit", hexa);
+	getch();
+}
