@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<conio.h>
+#define N 3
+
+int number_of_digits(int number);
+
+
+void main (void)
+{
+	int offset = number_of_digits(N);
+	int col = (N-1) / 2;
+	int row = 0;
+	int value = 1;
+	int count_row = 0, count_col = 0;
+	clrscr();
+	gotoxy(col+1, row+1);
+	printf("%d", value);
+
+	for(count_row = 0; count_row < N; count_row ++)
+	{
+		for(count_col = 0; count_col < N; count_col ++)
+		{
+			value++;
+			if(value % N == 0)
+			{
+				row = (++row) ;
+				if(row> N-1) row = 0;
+			}
+			else
+			{
+				row = (--row) ;
+				col = (--col) ;
+				if(row<0) row = N-1;
+				if(col<0) col = N-1;
+			}
+			gotoxy(col+1, row+1);
+			printf("%d", value);
+		}
+	}
+	getch();
+}
+
+int number_of_digits(int number)
+{
+	int count = 1;
+
+	do
+	{
+		count ++;
+	}while( number%( 10^(count-1) ) != number );
+
+	return count-1;
+}
