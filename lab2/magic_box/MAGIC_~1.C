@@ -1,6 +1,7 @@
+
 #include<stdio.h>
 #include<conio.h>
-#define N 5
+#define N 9
 
 int number_of_digits(int number);
 
@@ -40,13 +41,13 @@ void main (void)
 int number_of_digits(int number)
 {
 	int count = 0;
-	int check = 0 ;
+	float check = 0 ;
 
 	do
 	{
 		count ++;
-		check = number%( 10^(count));
-	}while(  check != number );
+		check = number/( 10^(count));
+	}while(  check > 1 );
 
 	return count;
 }
